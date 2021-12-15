@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "reto@wp.pl",
+      "password": "taczka11",
+      "id": 1
+    },
+    {
+      "email": "ashdshad@wp.pl",
+      "password": "elekjsa",
+      "id": 2
+    },
+    {
+      "email": "asdjsajdsa@onet.pl",
+      "password": "jasjdsajdsa",
+      "id": 3
+    },
+    {
+      "email": "JASJDJSA@WP.PL",
+      "password": "JASJASJDSA23",
+      "id": 4
+    },
+    {
+      "email": "jacapraca@wp.pl",
+      "password": "askdsakdsa",
+      "id": 5
+    },
+    {
+      "email": "jeeeasd@onet.pl",
+      "password": "2746fhj3hde4",
+      "id": 6
+    }
+  ]
+}

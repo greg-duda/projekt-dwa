@@ -1,0 +1,112 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+.App {
+}
+.Nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #99D9EA;
+}
+#ndFragment {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 2fr;
+}
+#imageLeft {
+    height: 100%;
+    width: 100%;
+}
+#imageRight {
+    height: 100%;
+    width: 100%;
+}
+#navbtns {
+    display: grid;
+    justify-content: center;
+    align-content:center;
+    grid-row-gap: 2em;
+    
+}
+.grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 30px;
+    background-color: #99D9EA;
+    box-shadow: black 5px 6px 45px 5px inset;
+}
+#specific-poke {
+    margin: 0 auto;
+    width: 50%;
+    background: burlywood;
+    display: grid;
+    grid-template-rows:  1fr 8fr;
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+}
+#specific-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4fr 1fr 1fr;
+}
+#grid-header {
+    line-height: 40px;;
+    font-size: 40px;
+    text-align: center;
+    height: 50px;
+    background-color: #99D9EA;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: 1px solid black;
+    align-items: center;
+}
+#image-container {
+    width: 80%;
+    height: 80%;
+    border: 1px solid red;
+    align-self: flex-end;
+    justify-self: left;
+}
+#grid-item-1 {
+    align-self: center;
+    font-size: 50px;
+    text-align: center;
+    grid-column: 1 / 3;
+}
+.grid-items-left {
+    justify-self: center;
+    text-align: center;
+    color: gray;
+}
+.grid-items-right {
+    justify-self: end;
+    text-align: center;
+    color: gray;
+}
+#favourite-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    background-image: url();
+}
+#search-bar {
+    background-color: crimson;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: black 23px 24px 44px -21px inset;
+}
+#footer {
+    justify-self: center;
+    align-self: center;
+}
+#footer-container {
+    background-color: crimson;
+    width: 100%;
+    height: 15vh;
+    display: grid;
+    box-shadow: black 23px 24px 44px -21px inset;
+}
