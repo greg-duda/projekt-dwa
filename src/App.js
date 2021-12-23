@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 import Pokemons from './Components/Pokemons';
 
@@ -11,6 +10,7 @@ import './App.css'
 import Nav from './Components/Nav';
 import SinglePoke from './Components/SinglePoke';
 import Favourites from './Components/Favourites';
+import Arena from './Components/Arena';
 
 function App() {
   
@@ -25,6 +25,8 @@ function App() {
     <Route element={<SinglePoke/>} path='/:id/:name'>
     </Route>
     <Route element={<Favourites/>} exact path='/favourites'>
+    </Route>
+    <Route element={<Arena/>} exact path='/arena'>
     </Route>
     </Routes>
     </div>

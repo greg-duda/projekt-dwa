@@ -59,21 +59,23 @@ const Nav = () => {
     return (
         <div className='Nav'>
             <div id='stFragment'>
-            <img src={Logo}></img>
+            <img alt='logo-pokedex' src={Logo}></img>
             </div>
             <div id='ndFragment'>
-                <div><img id='imageLeft' src={bulba}></img></div>
+                <div><img alt='pokemon-bulbasaur' id='imageLeft' src={bulba}></img></div>
                 <div id='navbtns'>
                     <Link to={'/favourites'}>
                     <NavButton>Ulubione
                         <Icon src={heart} />
                     </NavButton>
                     </Link>
+                    <Link to={'/arena'}>
                     <NavButton>Arena
                         <Icon src={stadium}/>
                     </NavButton>
+                    </Link>
                 </div>
-                <div><img id ='imageRight' src={pika}></img></div>
+                <div><img alt='pokemon-pikachu' id ='imageRight' src={pika}></img></div>
             </div>
             
         </div>

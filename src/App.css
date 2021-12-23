@@ -2,6 +2,7 @@
     font-family: 'Press Start 2P', cursive;
 }
 .App {
+    background-color: #99D9EA;
 }
 .Nav {
     display: grid;
@@ -28,9 +29,9 @@
     
 }
 .grid {
-    padding: 10px;
+    padding: 2% 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
     row-gap: 30px;
     background-color: #99D9EA;
@@ -39,11 +40,11 @@
 #specific-poke {
     margin: 0 auto;
     width: 50%;
-    background: burlywood;
+    background-color: snow;
     display: grid;
-    grid-template-rows:  1fr 8fr;
+    grid-template-rows:  1fr 1fr 8fr;
     grid-template-columns: 1fr 2fr;
-    position: relative;
+
 }
 #specific-details {
     display: grid;
@@ -51,22 +52,37 @@
     grid-template-rows: 4fr 1fr 1fr;
 }
 #grid-header {
-    line-height: 40px;;
+    line-height: 50px;;
     font-size: 40px;
     text-align: center;
     height: 50px;
-    background-color: #99D9EA;
+    background-color: crimson;
     grid-column-start: 1;
     grid-column-end: 3;
     border: 1px solid black;
     align-items: center;
+    vertical-align: middle;
+    color: whitesmoke;
+}
+#grid-nav {
+    line-height: 40px;;
+    font-size: 40px;
+    text-align: center;
+    height: 50px;
+    background-color: snow;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: 1px solid black;
 }
 #image-container {
     width: 80%;
     height: 80%;
-    border: 1px solid red;
+    background-color: snow;
     align-self: flex-end;
-    justify-self: left;
+    justify-self: center;
+    box-shadow: grey 2px 1px 7px 3px;
+    padding: 0px 10px;
+    margin: 30px;
 }
 #grid-item-1 {
     align-self: center;
@@ -80,16 +96,19 @@
     color: gray;
 }
 .grid-items-right {
-    justify-self: end;
+    justify-self: center;
     text-align: center;
     color: gray;
 }
 #favourite-grid {
+    min-width: 100%;
+    min-height: 50vh;
+    background-color: #99D9EA;
+    padding: 1% 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     justify-items: center;
-    background-image: url();
 }
 #search-bar {
     background-color: crimson;
@@ -109,4 +128,26 @@
     height: 15vh;
     display: grid;
     box-shadow: black 23px 24px 44px -21px inset;
+}
+#arena-grid {
+    box-shadow: inset black -7px 26px 75px 57px;
+    padding: 5% 0;
+    background-image: url(../src/Images/arena.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 20px;
+    justify-items: center;
+    grid-auto-flow: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#arena-grid-item{
+    grid-column: 2;
+    font-size: 80px;
+    text-align: center;
+    color: crimson;
 }

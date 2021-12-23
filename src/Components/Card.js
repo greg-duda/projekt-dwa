@@ -13,7 +13,7 @@ display:grid;
 vertical-align: center;
 padding-top: 5px;
 justify-content: center;
-width: 400px;
+width: 350px;
 height: 110px;
 text-align: center;
 color: white;
@@ -26,7 +26,7 @@ background-image: url(${back});
 background-position: center;
 border-radius: 5px;
 height: 450px;
-width: 400px;
+width: 350px;
 background-color: rgb(252, 101, 101);
 background-repeat: no-repeat;
 display: grid;
@@ -44,9 +44,10 @@ font-size: 20px;
 height: 30px;
 line-height: 30px;
 background-color: #656566;
-width: 100%;
+width: 50%;
 text-align: center;
 color: whitesmoke;
+justify-self: center;
 `
 
 const Card = ({url, name}) => {
@@ -62,7 +63,7 @@ const Card = ({url, name}) => {
     <Link to={`/${details.id}/${details.name}`}>
         <CardStyle>
             <CardHeader>{details?.name}</CardHeader>
-            <div style={{height: '270px', width: '400px', justifyContent: 'center',}}><img style={{width: '100%', height: '100%',}}  src={details?.sprites?.other?.dream_world?.front_default}></img></div>
+            <div style={{height: '270px', width: '350px', justifyContent: 'center',}}><img alt='pokemon' style={{width: '100%', height: '100%',}}  src={details?.sprites?.other?.dream_world?.front_default}></img></div>
             <DetailStyle>
             <StyledSpan>Ability: {details?.abilities?.[0]?.ability?.name}</StyledSpan>
             <StyledSpan>Base Experience: {details?.base_experience}</StyledSpan>
