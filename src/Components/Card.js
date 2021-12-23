@@ -1,8 +1,9 @@
-import styled from 'styled-components'
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
 import axios from 'axios'
-import back from '../Images/back.jpg'
 import { Link } from 'react-router-dom'
+
+import back from '../Images/back.jpg'
 
 const StyledSpan = styled.span `
 font-size: 10px;
@@ -57,7 +58,7 @@ const Card = ({url, name}) => {
         .then((res) => {
             setDetails(res.data)
         })
-    }, [])
+    }, )
     return (
         <div id='pokemon-container'>
     <Link to={`/${details.id}/${details.name}`}>

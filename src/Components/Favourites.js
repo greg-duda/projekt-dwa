@@ -1,8 +1,9 @@
 import React, { useState, useEffect} from 'react'
 import Card from './Card'
 import axios from 'axios'
-import { BackButton } from './SinglePoke'
 import { useNavigate } from 'react-router-dom';
+
+import { BackButton } from './SinglePoke'
 
 const Favourites = () => {
     const [clear, setClear] = useState(false)
@@ -25,7 +26,7 @@ const Favourites = () => {
     }, [clear])
     return (
         <>
-        <div style={{backgroundColor: '#99D9EA'}}><button style={{display: 'block', margin: '0 auto', width: '300px', height: '50px', backgroundColor: 'lightgray'}} disabled={favPoke.length === 0} onClick={clearHandler}>Wyczyść wszystkie</button></div>
+        <div style={{backgroundColor: '#99D9EA'}}><button style={{display: 'block', border: 'none', cursor: 'pointer', margin: '0 auto', width: '300px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={favPoke.length === 0} onClick={clearHandler}>Wyczyść wszystkie</button></div>
         
         <div id="favourite-grid">
             {favPoke?.map((item) => <Card  key={item.id}url={item.url} name={item.name}/>)}

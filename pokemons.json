@@ -1,71 +1,60 @@
 {
   "favourites": [
     {
-      "name": "squirtle",
-      "url": "https://pokeapi.co/api/v2/pokemon/7",
+      "name": "jynx",
+      "url": "https://pokeapi.co/api/v2/pokemon/124",
       "id": 1
     },
     {
-      "name": "wartortle",
-      "url": "https://pokeapi.co/api/v2/pokemon/8",
+      "name": "farfetchd",
+      "url": "https://pokeapi.co/api/v2/pokemon/83",
       "id": 2
     },
     {
-      "name": "ivysaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/2",
+      "name": "poliwrath",
+      "url": "https://pokeapi.co/api/v2/pokemon/62",
       "id": 3
     },
     {
-      "name": "blastoise",
-      "url": "https://pokeapi.co/api/v2/pokemon/9",
+      "name": "chansey",
+      "url": "https://pokeapi.co/api/v2/pokemon/113",
       "id": 4
     },
     {
-      "name": "kakuna",
-      "url": "https://pokeapi.co/api/v2/pokemon/14",
+      "name": "rhydon",
+      "url": "https://pokeapi.co/api/v2/pokemon/112",
       "id": 5
     },
     {
-      "name": "geodude",
-      "url": "https://pokeapi.co/api/v2/pokemon/74",
+      "name": "mr-mime",
+      "url": "https://pokeapi.co/api/v2/pokemon/122",
       "id": 6
     },
     {
-      "name": "rapidash",
-      "url": "https://pokeapi.co/api/v2/pokemon/78",
+      "name": "omanyte",
+      "url": "https://pokeapi.co/api/v2/pokemon/138",
       "id": 7
     },
     {
-      "name": "slowpoke",
-      "url": "https://pokeapi.co/api/v2/pokemon/79",
+      "name": "mankey",
+      "url": "https://pokeapi.co/api/v2/pokemon/56",
       "id": 8
     },
     {
-      "name": "grimer",
-      "url": "https://pokeapi.co/api/v2/pokemon/88",
+      "name": "vulpix",
+      "url": "https://pokeapi.co/api/v2/pokemon/37",
       "id": 9
     },
     {
-      "name": "haunter",
-      "url": "https://pokeapi.co/api/v2/pokemon/93",
+      "name": "arcanine",
+      "url": "https://pokeapi.co/api/v2/pokemon/59",
       "id": 10
     },
     {
-      "name": "horsea",
-      "url": "https://pokeapi.co/api/v2/pokemon/116",
+      "name": "ponyta",
+      "url": "https://pokeapi.co/api/v2/pokemon/77",
       "id": 11
     }
   ],
-  "arena": [
-    {
-      "name": "grimer",
-      "url": "https://pokeapi.co/api/v2/pokemon/88",
-      "id": 1
-    },
-    {
-      "name": "blastoise",
-      "url": "https://pokeapi.co/api/v2/pokemon/9",
-      "id": 2
-    }
-  ]
+  "arena": []
 }

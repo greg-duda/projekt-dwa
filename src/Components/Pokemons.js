@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import styled from 'styled-components';
+
 import TextField from '@mui/material/TextField';
 import Card from './Card';
 
@@ -24,10 +25,15 @@ transition: 0.5s;
 
 const Pokemons = () => {
     const [data, setData] = useState([])
-    const [limit, setLimit] = useState(151)
     const [search, setSearch] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
-    const [pokesPerPage, setPokesPerPage] = useState(15)
+
+    const limit = 151
+    const pokesPerPage = 15
+    const allPages = Math.ceil(limit / pokesPerPage)
+    const lastIndex = currentPage * pokesPerPage
+    const firstIndex = lastIndex - pokesPerPage
+    const currentPokes = data?.results?.slice(firstIndex, lastIndex)
 
     const prev = () => {
         setCurrentPage((prev) => prev - 1)
@@ -46,10 +52,7 @@ const Pokemons = () => {
             console.log(res)
         })
     }, [])
-    const allPages = Math.ceil(limit / pokesPerPage)
-    const lastIndex = currentPage * pokesPerPage
-    const firstIndex = lastIndex - pokesPerPage
-    const currentPokes = data?.results?.slice(firstIndex, lastIndex)
+    
     
     return (
         <>

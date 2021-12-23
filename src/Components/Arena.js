@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from 'react'
-import Card from './Card'
 import axios from 'axios'
+
 import { useNavigate } from 'react-router-dom';
 import { BackButton } from './SinglePoke'
-import { CloudUpload } from '@material-ui/icons';
+import Card from './Card'
+
 
 
 const Arena = () => {
@@ -11,11 +12,13 @@ const Arena = () => {
     const [clear, setClear] = useState(false)
     const [arenaPoke, setArenaPoke] = useState([])
 
+
     const navigate = useNavigate()
     let currentArena = []
    
     const clearHandler = () => {
         setClear(!clear)
+        setWinner([])
         let item
         for(item of arenaPoke) {
             axios.delete(`http://localhost:3002/arena/${item.id}`)
@@ -23,29 +26,37 @@ const Arena = () => {
     }
 
     
-    const fightHandler = () => {
+    const fightHandler = async () => {
         let item
         for(item of arenaPoke) {
-            axios.get(`${item.url}`)
-            .then((res) => {
-                currentArena.push(res.data)
-            })
+            const res = await axios.get(`${item.url}`)
+                 currentArena.push(res.data)
+                 if(currentArena.length === 2 && currentArena[0].base_experience > currentArena[1].base_experience) {
+                    setWinner(currentArena[0].name.toUpperCase())
+                
+                } else if(currentArena.length === 2 && currentArena[1].base_experience > currentArena[0].base_experience) {
+                    setWinner(currentArena[1].name.toUpperCase())
+                     
+                }
+            }
             
-    }  console.log(currentArena, 'current')
 }
 useEffect(() => {
     axios.get('http://localhost:3002/arena').then((res) =>{
         setArenaPoke(res.data)
 
     })
-}, [clear])
+}, [clear, winner])
     return (
         <>
+        {winner ? <h1 style={{margin: '0', textAlign: 'center', color: 'snow'}}>THE WINNER IS... {winner}</h1> : <h1 style={{margin: '0', textAlign: 'center', color: 'snow'}}>LET THE BATTLE BEGIN...</h1>}
         <div id='arena-grid'>
+        
         <div id='arena-grid-item'>VS
-        <button onClick={fightHandler} style={{width: '200px', height: '50px', display: 'block'}} disabled={arenaPoke.length !== 2}>WALCZ</button>
-        <button onClick={clearHandler} style={{width: '200px', height: '50px', display: 'block'}} disabled={arenaPoke.length === 0}>Wyczyść</button>
+        <button onClick={fightHandler} style={{display: 'block', border: 'none', cursor: 'pointer', margin: '10px auto', width: '200px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={arenaPoke.length !== 2 && winner !== null}>WALCZ</button>
+        <button onClick={clearHandler} style={{display: 'block', border: 'none', cursor: 'pointer', margin: '10px auto', width: '200px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={arenaPoke.length === 0}>Wyczyść</button>
         </div>
+        
         {arenaPoke.length > 0 ? <>{arenaPoke?.map((item) => <> <Card key={item.id} url={item.url} name={item.name}  /> </>)}</> : <> <div style={{width: '350px', height: '450px', border: '1px solid white'}}> </div><div style={{width: '350px', height: '450px', border: '1px solid white'}}></div></>}
         </div>
         <div style={{backgroundColor: '#99D9EA'}}><BackButton style={{width: '100%'}} onClick={() => navigate('/')}>Powrót do listy</BackButton></div>
@@ -56,35 +67,3 @@ useEffect(() => {
 }
 
 export default Arena
-
-  // const check = () => {
-        
-    //     let item
-    //     for(item of arenaPoke) {
-    //         axios.get(`${item.url}`)
-    //         .then((res) => {
-    //          baseExp.push(res.data.base_experience)
-    //         })
-    //     }
-    //     if(baseExp[0] > baseExp[1]) {
-    //         console.log('winner is', arenaPoke[0].name)
-    //         setWinner(arenaPoke[0].name)
-    //         alert(`Zwyciezca: ${arenaPoke[0].name}`)
-
-    //     } else if (baseExp[1] > baseExp[0]) {
-    //         console.log('winner is', arenaPoke[1].name)
-    //         setWinner(arenaPoke[1].name)
-    //         alert(`Zwyciezca: ${arenaPoke[1].name}`)
-    //     }
-    //     return(<h1>{winner}</h1>)
-    // }
-
-
-           // if(item[0]?.data.base_experience > item[1].data.base_experience) {
-        //     setWinner(item[0]?.data.name)
-        // }else if (item[1]?.data.base_experience > item[0].data.base_experience) {
-        //     setWinner(item[1].data.name)
-        // } else {
-        //     console.log('draw')
-        // }
-        // console.log(winner)
