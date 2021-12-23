@@ -54,6 +54,16 @@
       "name": "ponyta",
       "url": "https://pokeapi.co/api/v2/pokemon/77",
       "id": 11
+    },
+    {
+      "name": "weedle",
+      "url": "https://pokeapi.co/api/v2/pokemon/13",
+      "id": 12
+    },
+    {
+      "name": "caterpie",
+      "url": "https://pokeapi.co/api/v2/pokemon/10",
+      "id": 13
     }
   ],
   "arena": []

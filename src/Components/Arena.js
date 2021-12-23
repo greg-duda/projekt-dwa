@@ -8,9 +8,10 @@ import Card from './Card'
 
 
 const Arena = () => {
-    const [winner, setWinner] = useState([])
+    const [winner, setWinner] = useState('')
     const [clear, setClear] = useState(false)
     const [arenaPoke, setArenaPoke] = useState([])
+    const [draw, setDraw] = useState(false)
 
 
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ const Arena = () => {
    
     const clearHandler = () => {
         setClear(!clear)
-        setWinner([])
+        setWinner('')
         let item
         for(item of arenaPoke) {
             axios.delete(`http://localhost:3002/arena/${item.id}`)
@@ -37,7 +38,10 @@ const Arena = () => {
                 } else if(currentArena.length === 2 && currentArena[1].base_experience > currentArena[0].base_experience) {
                     setWinner(currentArena[1].name.toUpperCase())
                      
-                }
+                }else if((currentArena.length === 2 && currentArena[1].base_experience === currentArena[0].base_experience)) {
+                    console.log('remis')
+                    setWinner('UNKNOWN')
+                    setDraw(true)}
             }
             
 }
@@ -46,14 +50,15 @@ useEffect(() => {
         setArenaPoke(res.data)
 
     })
-}, [clear, winner])
+}, [clear, winner, draw])
     return (
         <>
+        {draw ? <h1 style={{margin: '0', textAlign: 'center', color: 'snow'}}>IT'S A DRAW</h1> : null}
         {winner ? <h1 style={{margin: '0', textAlign: 'center', color: 'snow'}}>THE WINNER IS... {winner}</h1> : <h1 style={{margin: '0', textAlign: 'center', color: 'snow'}}>LET THE BATTLE BEGIN...</h1>}
         <div id='arena-grid'>
         
         <div id='arena-grid-item'>VS
-        <button onClick={fightHandler} style={{display: 'block', border: 'none', cursor: 'pointer', margin: '10px auto', width: '200px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={arenaPoke.length !== 2 && winner !== null}>WALCZ</button>
+        <button onClick={fightHandler} style={{display: 'block', border: 'none', cursor: 'pointer', margin: '10px auto', width: '200px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={arenaPoke.length !== 2 || winner !== ''}>WALCZ</button>
         <button onClick={clearHandler} style={{display: 'block', border: 'none', cursor: 'pointer', margin: '10px auto', width: '200px', height: '50px', backgroundColor: 'snow', borderRadius: '5px'}} disabled={arenaPoke.length === 0}>Wyczyść</button>
         </div>
         

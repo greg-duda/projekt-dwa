@@ -21,7 +21,6 @@ const Favourites = () => {
     useEffect(() => {
         axios.get(' http://localhost:3002/favourites').then((res) => {
             setFavPoke(res.data)
-            console.log(res)
         })
     }, [clear])
     return (
